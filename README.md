@@ -60,6 +60,17 @@ workspace corner (fixed with a linear reach term and a displacement penalty), an
 run whose critic diverged after one physics blow-up produced a return of -2493 (fixed with an
 instability guard and per-step reward clipping). Both are in [docs/design.md](docs/design.md).
 
+## Artifacts on Hugging Face
+
+| What | Link |
+|---|---|
+| Trained SAC grasp-and-lift policy, eval results, video, model card | https://huggingface.co/saibala29/so101-lift-sac |
+| 50 scripted pick-and-place demonstrations as a LeRobot v3 dataset (two cameras, 10 Hz, language tasks) | https://huggingface.co/datasets/saibala29/so101_sim_pick_place |
+
+Load the policy with `SAC.load("lift_sac_nominal.zip")` from the model repo, or the dataset with
+`LeRobotDataset("saibala29/so101_sim_pick_place")`; both are produced by the scripts under
+`so101_workcell/hub`.
+
 ## Quick start
 
 ```bash
